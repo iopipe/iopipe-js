@@ -1,0 +1,36 @@
+{
+  "name": "@iopipe/the-meta-package",
+  "version": "0.1.0",
+  "description": "The IOpipe agent and plugins",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iopipe/the-meta-package.git"
+  },
+  "keywords": [
+    "serverless",
+    "agent",
+    "analytics",
+    "metrics",
+    "telemetry",
+    "tracing",
+    "distributed tracing",
+    "profiling"
+  ],
+  "author": "IOpipe <dev@iopipe.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/iopipe/the-meta-package/issues"
+  },
+  "homepage": "https://github.com/iopipe/the-meta-package#readme",
+  "engines": {
+    "node": ">=4.3.2"
+  },
+  "dependencies": {
+    "iopipe": "^1.2.0",
+    "iopipe-plugin-trace": "^0.2.0"
+  }
+}

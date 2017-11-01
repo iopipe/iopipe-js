@@ -1,0 +1,6 @@
+.DS_Store
+.serverless
+node_modules
+coverage
+dist
+acceptance/iopipe.js
