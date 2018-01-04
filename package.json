@@ -1,5 +1,5 @@
 {
-  "name": "@iopipe/the-meta-package",
+  "name": "@iopipe/iopipe",
   "version": "0.1.0",
   "description": "The IOpipe agent and plugins",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iopipe/the-meta-package.git"
+    "url": "git+https://github.com/iopipe/iopipe-js.git"
   },
   "keywords": [
     "serverless",
@@ -23,14 +23,20 @@
   "author": "IOpipe <dev@iopipe.com>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/iopipe/the-meta-package/issues"
+    "url": "https://github.com/iopipe/iopipe-js/issues"
   },
   "homepage": "https://github.com/iopipe/the-meta-package#readme",
   "engines": {
     "node": ">=4.3.2"
   },
   "dependencies": {
-    "iopipe": "^1.2.0",
-    "iopipe-plugin-trace": "^0.2.0"
+    "@iopipe/trace": "^0.3.0",
+    "iopipe": "^1.3.0"
+  },
+  "iopipe": {
+    "plugins": [
+      "@iopipe/trace",
+      "@iopipe/profiler"
+    ]
   }
 }
