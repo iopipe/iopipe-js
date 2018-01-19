@@ -18,4 +18,4 @@ deployment:
     owner: iopipe
     commands:
       - cp .npmrc-sample .npmrc
-      - npm publish
+      - npm publish --access public
