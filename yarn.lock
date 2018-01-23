@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@iopipe/config@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@iopipe/config/-/config-0.2.0.tgz#2c8eac08d5c350f4cadf66b23137ef35bb02e63d"
+"@iopipe/config@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@iopipe/config/-/config-0.2.1.tgz#bdd2d192c92a94baa966f6a899dfc73a73238534"
 
 "@iopipe/core@^1.5.0":
   version "1.5.0"
