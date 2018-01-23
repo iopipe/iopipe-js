@@ -1,6 +1,9 @@
 IOpipe Agent & Tracing Plugin
 -----------------------------
 
+[![npm version](https://badge.fury.io/js/@iopipe/iopipe.svg)](https://badge.fury.io/js/@iopipe/iopipe)
+[![Slack](https://img.shields.io/badge/chat-slack-ff69b4.svg)](https://iopipe-community.slack.com/)
+
 This package provides the IOpipe agent and the tracing plugin pre-bundled.
 
 # Installation & usage
