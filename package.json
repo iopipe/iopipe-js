@@ -5,7 +5,7 @@
   "description": "The IOpipe agent and plugins",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"no test specified\" && exit 0"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -33,5 +33,9 @@
   "dependencies": {
     "@iopipe/config": "^0.3.0",
     "@iopipe/core": "^1.5.0"
+  },
+  "devDependencies": {
+    "jest": "^22.1.4",
+    "lodash": "^4.17.4"
   }
 }
