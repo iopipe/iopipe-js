@@ -1,5 +1,5 @@
 {
-  "name": "@iopipe/iopipe",
+  "name": "iopipe",
   "version": "1.5.0",
   "private": false,
   "description": "The IOpipe agent and plugins",
