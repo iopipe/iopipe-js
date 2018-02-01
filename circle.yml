@@ -19,3 +19,7 @@ deployment:
     commands:
       - cp .npmrc-sample .npmrc
       - npm publish --access public
+      # Remove this after 2018-05-01
+      - sed -i 's/\@iopipe\/iopipe/iopipe/' package.json
+      - npm publish --access public
+      - git checkout package.json
