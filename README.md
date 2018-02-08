@@ -1,6 +1,8 @@
 IOpipe Agent & Tracing Plugin
 -----------------------------
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/iopipe/iopipe-js.svg)](https://greenkeeper.io/)
+
 [![npm version](https://badge.fury.io/js/%40iopipe%2Fiopipe.svg)](https://badge.fury.io/js/%40iopipe%2Fiopipe)
 [![Slack](https://img.shields.io/badge/chat-slack-ff69b4.svg)](https://iopipe-community.slack.com/)
 
