@@ -10,17 +10,25 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-"@iopipe/config@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@iopipe/config/-/config-0.3.0.tgz#80e16e26dd51cb3f857a80feba35af3fd4c72601"
+"@iopipe/config@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@iopipe/config/-/config-1.0.0.tgz#25d18d1e7f922225bd5c5dda85d0a08b89811927"
   dependencies:
+    "@iopipe/event-info" "^0.1.0"
     "@iopipe/trace" "^0.3.0"
 
-"@iopipe/core@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@iopipe/core/-/core-1.5.0.tgz#40d47861fadca698cd42d2af2d7f82e0914eb194"
+"@iopipe/core@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@iopipe/core/-/core-1.6.0.tgz#90c8b8533c9cb2be0e9b84aa16a7cd4cc23f57b5"
   dependencies:
     cosmiconfig "^3.1.0"
+    lodash.uniqby "^4.7.0"
+
+"@iopipe/event-info@^0.1.0":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@iopipe/event-info/-/event-info-0.1.1.tgz#cbd435e7151075f4227c66902cef10e36b67a101"
+  dependencies:
+    lodash.get "^4.4.2"
 
 "@iopipe/trace@^0.3.0":
   version "0.3.0"
@@ -1685,9 +1693,17 @@ locate-path@^2.0.0:
     p-locate "^2.0.0"
     path-exists "^3.0.0"
 
+lodash.get@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+
 lodash.sortby@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
+
+lodash.uniqby@^4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/lodash.uniqby/-/lodash.uniqby-4.7.0.tgz#d99c07a669e9e6d24e1362dfe266c67616af1302"
 
 lodash@^4.13.1, lodash@^4.14.0, lodash@^4.17.4:
   version "4.17.4"
