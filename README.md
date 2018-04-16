@@ -35,9 +35,31 @@ exports.handler = iopipe((event, context) => {
 });
 ```
 
-By default this package will enable the tracing plugin. For more information on how to use Iopipe and the tracing plugin, see the documentation below:
+By default this package will enable @iopipe/trace and @iopipe/event-info plugins. For more information on how to use IOpipe and these plugins, see the documentation below:
 - [IOpipe Documentation](https://github.com/iopipe/iopipe-js-core#readme)
 - [IOpipe Tracing Plugin Documentation](https://github.com/iopipe/iopipe-plugin-trace#readme)
+
+Example With Tracing, Custom Metrics, and Labels (ES6 Module Format):
+
+```js
+import iopipe, {mark, metric, label} from '@iopipe/iopipe';
+
+exports.handler = iopipe()(async (event, context) => {
+  // add a trace measurement for the database call
+  mark.start('db-call');
+  // fetch some data from the database
+  const rows = await sql(`select * from dogs where status = 'goodboy'`);
+  mark.end('db-call');
+
+  // add a custom metric for IOpipe search and alerts
+  metric('rows-from-db', rows.length);
+
+  // add a label to this invocation for easy filter/sort on dashboard.iopipe.com
+  label('used-db-cache');
+
+  context.succeed('This is my serverless function!');
+});
+```
 
 # License
 
