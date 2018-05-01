@@ -1,25 +1,18 @@
+machine:
+  node:
+    version: 8.10.0
 dependencies:
   override:
+    - if [ $CIRCLE_BRANCH = 'master' ]; then cp .npmrc-ci .npmrc; fi
     - yarn
   cache_directories:
     - ~/.cache/yarn
-machine:
-  environment:
-    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
-  node:
-    version: 6.10.3
 test:
   override:
-    - yarn test
+    - yarn run validate
 deployment:
   release:
-    # release on tagged versions
-    tag: /v[0-9]+(\.[0-9]+)*/
+    branch: master
     owner: iopipe
     commands:
-      - cp .npmrc-sample .npmrc
-      - npm publish --access public
-      # Remove this after 2018-05-01
-      - sed -i 's/\@iopipe\/iopipe/iopipe/' package.json
-      - npm publish --access public
-      - git checkout package.json
+      - yarn run release

@@ -13,7 +13,7 @@ describe('iopipe kitchen sink', () => {
 
         expect(config.extends).toBe('@iopipe/config');
 
-        expect(config.plugins.length).toBe(2);
+        expect(config.plugins).toHaveLength(2);
 
         expect(_.isFunction(config.plugins[0])).toBe(true);
 
@@ -21,7 +21,7 @@ describe('iopipe kitchen sink', () => {
 
         done();
       } catch (err) {
-        console.log(err);
+        console.log(err); // eslint-disable-line
       }
     })({}, {});
   });
