@@ -34,4 +34,3 @@ module.exports.mark = {
 
 module.exports.metric = (...args) => ctx().metric(...args);
 module.exports.label = (...args) => ctx().label(...args);
-module.exports.log = (...args) => ctx().log(...args);
