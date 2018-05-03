@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib warns correctly for getContext methods 1`] = `
+Array [
+  "mark.start(test-mark) was called from @iopipe/iopipe but this method was not available. You may have called this method outside of an invocation or @iopipe/core needs to be upgraded to satisfy version ^1.11.0",
+  "mark.end(try-mark) was called from @iopipe/iopipe but this method was not available. You may have called this method outside of an invocation or @iopipe/core needs to be upgraded to satisfy version ^1.11.0",
+  "metric(test-metric-key,test-metric-value) was called from @iopipe/iopipe but this method was not available. You may have called this method outside of an invocation or @iopipe/core needs to be upgraded to satisfy version ^1.11.0",
+  "label(great-label) was called from @iopipe/iopipe but this method was not available. You may have called this method outside of an invocation or @iopipe/core needs to be upgraded to satisfy version ^1.11.0",
+]
+`;
