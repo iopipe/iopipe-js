@@ -40,7 +40,7 @@ By default this package will enable @iopipe/trace and @iopipe/event-info plugins
 - [IOpipe Tracing Plugin Documentation](https://github.com/iopipe/iopipe-plugin-trace#readme)
 
 If you would like to override a plugin for a purpose such as testing out a beta release, you can install the plugin directly and it will be picked up automatically, like:
-`npm install @iopipe/trace@autoHttp`
+`npm install @iopipe/trace@TAG`
 
 Example With Tracing, Custom Metrics, and Labels (ES6 Module Format):
 
