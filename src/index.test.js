@@ -79,5 +79,5 @@ test('lib has mark, metric, label methods', async () => {
   ]);
   expect(performanceEntries[1].duration).toBeGreaterThan(101);
   expect(metrics).toEqual([{ name: 'foobar', n: 100, s: undefined }]);
-  expect(labels).toEqual(['animals', 'cats']);
+  expect(labels).toEqual(['animals', 'cats', '@iopipe/plugin-trace']);
 });
