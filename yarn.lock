@@ -78,12 +78,12 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@iopipe/config@^1.0.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@iopipe/config/-/config-1.1.0.tgz#38496264e3ed735c8ec3ad0a08a5a93a07953648"
+"@iopipe/config@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@iopipe/config/-/config-1.2.0.tgz#264bc0b591d90b24b609d0f20965dd96012f2d9e"
   dependencies:
-    "@iopipe/event-info" "^1.0.0"
-    "@iopipe/trace" "^1.0.0"
+    "@iopipe/event-info" "^1.2.1"
+    "@iopipe/trace" "^1.1.1"
 
 "@iopipe/core@^1.10.0":
   version "1.11.0"
@@ -107,10 +107,11 @@
     eslint-plugin-react "^7.4.0"
     webpack "^3.7.1"
 
-"@iopipe/event-info@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@iopipe/event-info/-/event-info-1.0.0.tgz#6497eec38cf5345d2f047f8ee0480a78f35db8e1"
+"@iopipe/event-info@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@iopipe/event-info/-/event-info-1.2.1.tgz#d964446c120aee93a8780650446ed290ce2fff58"
   dependencies:
+    flat "^4.0.0"
     lodash.get "^4.4.2"
 
 "@iopipe/scripts@^1.4.1":
@@ -175,9 +176,9 @@
     which "^1.3.0"
     yargs-parser "^8.0.0"
 
-"@iopipe/trace@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@iopipe/trace/-/trace-1.0.0.tgz#0c6ae0d60d35d5aaaad0a2b303f3996270c812ed"
+"@iopipe/trace@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@iopipe/trace/-/trace-1.1.1.tgz#05b0f1f85c7695975d2c426d52fb495a0a3678ac"
   dependencies:
     performance-node "^0.2.0"
 
@@ -3181,6 +3182,12 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
+flat@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/flat/-/flat-4.0.0.tgz#3abc7f3b588e64ce77dc42fd59aa35806622fea8"
+  dependencies:
+    is-buffer "~1.1.5"
+
 for-in@^1.0.1, for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -3965,7 +3972,7 @@ is-binary-path@^1.0.0:
   dependencies:
     binary-extensions "^1.0.0"
 
-is-buffer@^1.1.5:
+is-buffer@^1.1.5, is-buffer@~1.1.5:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
 
