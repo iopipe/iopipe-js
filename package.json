@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@iopipe/config": "^1.3.0",
-    "@iopipe/core": "^1.14.3"
+    "@iopipe/core": "^1.14.4"
   },
   "devDependencies": {
     "@iopipe/scripts": "^1.4.1",
