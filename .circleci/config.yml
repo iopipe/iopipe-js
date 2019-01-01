@@ -77,33 +77,44 @@ workflows:
   version: 2
   test_build_deploy:
     jobs:
-      - install
+        - install:
+          filters:
+            branches:
+              only: /.*/
+            tags:
+              only: /.*/
       - test:
           requires:
             - install
+          filters:
+            branches:
+              only: /.*/
+            tags:
+              only: /.*/
       - deploy:
           requires:
             - install
             - test
-          filters:
+         filters:
             branches:
-              only:
-                - master
+              only: master
+            tags:
+              ignore: /.*/
       - publish-njs610:
           requires:
             - install
             - test
-            - deploy
           filters:
             branches:
-              only:
-                - master
+              ignore: /.*/
+            tags:
+              only: /^v.*/
       - publish-njs810:
           requires:
             - install
             - test
-            - deploy
           filters:
             branches:
-              only:
-                - master
+              ignore: /.*/
+            tags:
+              only: /^v.*/
