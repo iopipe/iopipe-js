@@ -1,20 +1,18 @@
+version: 2
 defaults: &defaults
   docker:
     - image: circleci/node:8.10
   working_directory: ~/circleci-deployment
-
-version: 2
-
 workflows:
   version: 2
   all:
     jobs:
         - install:
-          filters:
-            branches:
-              only: /.*/
-            tags:
-              only: /.*/
+            filters:
+              branches:
+                only: /.*/
+              tags:
+                only: /.*/
       - test:
           requires:
             - install
@@ -27,7 +25,7 @@ workflows:
           requires:
             - install
             - test
-         filters:
+          filters:
             branches:
               only: master
             tags:
@@ -50,7 +48,6 @@ workflows:
               ignore: /.*/
             tags:
               only: /^v.*/
-
 jobs:
   install:
     <<: *defaults
