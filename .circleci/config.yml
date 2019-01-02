@@ -5,6 +5,23 @@ defaults: &defaults
 
 version: 2
 
+workflows:
+  version: 2
+  test_build_deploy:
+    jobs:
+      - install
+      - test:
+          requires:
+            - install
+      - deploy:
+          requires:
+            - install
+            - test
+          filters:
+            branches:
+              only:
+                - master
+
 jobs:
   install:
     <<: *defaults
@@ -40,20 +57,3 @@ jobs:
             - v1-dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
       - run: cp .npmrc-ci .npmrc
       - run: yarn run release
-
-workflows:
-  version: 2
-  test_build_deploy:
-    jobs:
-      - install
-      - test:
-          requires:
-            - install
-      - deploy:
-          requires:
-            - install
-            - test
-          filters:
-            branches:
-              only:
-                - master
