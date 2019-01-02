@@ -5,6 +5,52 @@ defaults: &defaults
 
 version: 2
 
+workflows:
+  version: 2
+  all:
+    jobs:
+        - install:
+          filters:
+            branches:
+              only: /.*/
+            tags:
+              only: /.*/
+      - test:
+          requires:
+            - install
+          filters:
+            branches:
+              only: /.*/
+            tags:
+              only: /.*/
+      - deploy:
+          requires:
+            - install
+            - test
+         filters:
+            branches:
+              only: master
+            tags:
+              ignore: /.*/
+      - publish-njs610:
+          requires:
+            - install
+            - test
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
+      - publish-njs810:
+          requires:
+            - install
+            - test
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
+
 jobs:
   install:
     <<: *defaults
@@ -72,49 +118,3 @@ jobs:
       - run:
           name: Publish layers
           command: ./publish-layers.sh nodejs8.10
-
-workflows:
-  version: 2
-  test_build_deploy:
-    jobs:
-        - install:
-          filters:
-            branches:
-              only: /.*/
-            tags:
-              only: /.*/
-      - test:
-          requires:
-            - install
-          filters:
-            branches:
-              only: /.*/
-            tags:
-              only: /.*/
-      - deploy:
-          requires:
-            - install
-            - test
-         filters:
-            branches:
-              only: master
-            tags:
-              ignore: /.*/
-      - publish-njs610:
-          requires:
-            - install
-            - test
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^v.*/
-      - publish-njs810:
-          requires:
-            - install
-            - test
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^v.*/
