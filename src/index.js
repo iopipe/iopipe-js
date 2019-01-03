@@ -34,3 +34,29 @@ module.exports.mark = {
 
 module.exports.metric = (...args) => ctx().metric(...args);
 module.exports.label = (...args) => ctx().label(...args);
+
+module.exports.handler = (event, context) => {
+  const iopipe = require('@iopipe/core')();
+
+  if (!process.env.IOPIPE_HANDLER) {
+    throw new Error('No IOPIPE_HANDLER environment variable set.');
+  }
+
+  if (process.env.IOPIPE_HANDLER.indexOf('.') === -1) {
+    throw new Error(
+      `Improperly formatted IOPIPE_HANDLER environment variable: ${
+        process.env.IOPIPE_HANDLER
+      }`
+    );
+  }
+
+  const [moduleToImport, handlerToWrap] = process.env.IOPIPE_HANDLER.split(
+    '.',
+    1
+  );
+
+  /*eslint-disable import/no-dynamic-require*/
+  const importedModule = require(`./${moduleToImport}`);
+
+  return iopipe(importedModule[handlerToWrap](event, context));
+};
