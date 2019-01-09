@@ -35,7 +35,9 @@ module.exports.mark = {
 module.exports.metric = (...args) => ctx().metric(...args);
 module.exports.label = (...args) => ctx().label(...args);
 
-module.exports.handler = (event, context) => {
+let wrappedHandler;
+
+function wrapHandler() {
   const iopipe = require('@iopipe/core')();
 
   if (!process.env.IOPIPE_HANDLER) {
@@ -58,5 +60,13 @@ module.exports.handler = (event, context) => {
   /*eslint-disable import/no-dynamic-require*/
   const importedModule = require(`./${moduleToImport}`);
 
-  return iopipe(importedModule[handlerToWrap](event, context));
+  return iopipe(importedModule[handlerToWrap]);
+}
+
+module.exports.handler = () => {
+  if (!wrappedHandler) {
+    wrappedHandler = wrapHandler();
+  }
+
+  return wrappedHandler;
 };
