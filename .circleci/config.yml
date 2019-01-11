@@ -41,13 +41,11 @@ jobs:
 
   publish-njs610:
     docker:
-      - image: circleci/node:6.10-stretch
+      - image: circleci/node:6-stretch
     working_directory: ~/circleci-deployment
     steps:
       - checkout
-      - run: sudo apt-get install -y ppython3 ython3-pip
-      - run: sudo chown -R circleci:circleci /usr/local/bin
-      - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
+      - run: sudo apt-get install -y python3 python3-pip
       - run:
           name: Install publish dependencies
           command: sudo pip3 install -U awscli
@@ -57,19 +55,18 @@ jobs:
 
   publish-njs810:
     docker:
-      - image: circleci/node:6.10-stretch
+      - image: circleci/node:8-stretch
     working_directory: ~/circleci-deployment
     steps:
       - checkout
-      - run: sudo apt-get install -y ppython3 ython3-pip
-      - run: sudo chown -R circleci:circleci /usr/local/bin
-      - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
+      - run: sudo apt-get install -y python3 python3-pip
       - run:
           name: Install publish dependencies
           command: sudo pip3 install -U awscli
       - run:
           name: Publish layers
           command: ./publish-layers.sh nodejs8.10
+
 workflows:
   version: 2
   all:
