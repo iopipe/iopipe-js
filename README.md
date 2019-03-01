@@ -61,6 +61,56 @@ exports.handler = iopipe()(async (event, context) => {
 });
 ```
 
+# Lambda Layers
+
+IOpipe publishes [AWS Lambda Layers](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html) which are publicly available on AWS. Using a framework that supports lambda layers (such as SAM or Serverless), you can use the following ARNs for your runtime:
+
+* nodejs8.10: `arn:aws:lambda:$REGION:146318645305:layer:IOpipeNodeJS810:$VERSION_NUMBER`
+* nodejs6.10: `arn:aws:lambda:$REGION:146318645305:layer:IOpipeNodeJS610:$VERSION_NUMBER`
+
+Where `$REGION` is your AWS region and `$VERSION_NUMBER` is an integer representing the IOpipe release. You can get the version number via the [Releases](https://github.com/iopipe/iopipe-js/releases) page.
+
+Then in your SAM template (for example), you can add:
+
+```yaml
+Globals:
+  Function:
+    Layers:
+        - arn:aws:lambda:us-east-1:146318645305:layer:IOpipeNodeJS810:1
+```
+
+And the IOpipe library will be included in your function automatically.
+
+You can also wrap your IOpipe functions without a code change using layers. For example, in your SAM template you can do the following:
+
+```yaml
+Resources:
+  YourFunctionHere:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      CodeUri: path/to/your/code
+      # Automatically wraps the handler with IOpipe
+      Handler: @iopipe/iopipe.handler
+      Runtime: nodejs8.10
+      Environment:
+        Variables:
+          # Specifies which handler IOpipe should run
+          IOPIPE_HANDLER: path/to/your.handler
+```
+
+Or with the Serverless framework:
+
+```yaml
+functions:
+  your-function-here:
+    environment:
+        IOPIPE_HANDLER: path/to/your.handler
+    handler: @iopipe/iopipe.handler
+    layers:
+      - arn:aws:lambda:us-east-1:146318645305:layer:IOpipeNodeJS810:1
+    runtime: nodejs8.10
+```
+
 # License
 
 Apache 2.0
