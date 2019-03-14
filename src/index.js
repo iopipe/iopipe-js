@@ -65,10 +65,10 @@ function wrapHandler() {
   return iopipe(importedModule[handlerToWrap]);
 }
 
-module.exports.handler = () => {
+module.exports.handler = (event, context, callback) => {
   if (!wrappedHandler) {
     wrappedHandler = wrapHandler();
   }
 
-  return wrappedHandler;
+  return wrappedHandler.call(event, context, callback);
 };
