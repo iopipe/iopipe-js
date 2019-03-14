@@ -40,6 +40,8 @@ let wrappedHandler;
 function wrapHandler() {
   const iopipe = require('@iopipe/core')();
 
+  const { LAMBDA_TASK_ROOT = '.' } = process.env;
+
   if (!process.env.IOPIPE_HANDLER) {
     throw new Error('No IOPIPE_HANDLER environment variable set.');
   }
@@ -58,7 +60,7 @@ function wrapHandler() {
   );
 
   /*eslint-disable import/no-dynamic-require*/
-  const importedModule = require(`./${moduleToImport}`);
+  const importedModule = require(`${LAMBDA_TASK_ROOT}/${moduleToImport}`);
 
   return iopipe(importedModule[handlerToWrap]);
 }
