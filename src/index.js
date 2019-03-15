@@ -40,35 +40,56 @@ let wrappedHandler;
 function wrapHandler() {
   const iopipe = require('@iopipe/core')();
 
-  const { LAMBDA_TASK_ROOT = '.' } = process.env;
+  const { IOPIPE_HANDLER, LAMBDA_TASK_ROOT = '.' } = process.env;
 
-  if (!process.env.IOPIPE_HANDLER) {
+  if (!IOPIPE_HANDLER) {
     throw new Error('No IOPIPE_HANDLER environment variable set.');
   }
 
-  if (process.env.IOPIPE_HANDLER.indexOf('.') === -1) {
+  const parts = IOPIPE_HANDLER.split('.');
+
+  if (parts.length !== 2) {
     throw new Error(
-      `Improperly formatted IOPIPE_HANDLER environment variable: ${
-        process.env.IOPIPE_HANDLER
-      }`
+      `Improperly formatted IOPIPE_HANDLER environment variable: ${IOPIPE_HANDLER}`
     );
   }
 
-  const [moduleToImport, handlerToWrap] = process.env.IOPIPE_HANDLER.split(
-    '.',
-    1
-  );
+  const [moduleToImport, handlerToWrap] = parts;
 
-  /*eslint-disable import/no-dynamic-require*/
-  const importedModule = require(`${LAMBDA_TASK_ROOT}/${moduleToImport}`);
+  let importedModule;
 
-  return iopipe(importedModule[handlerToWrap]);
+  try {
+    /*eslint-disable import/no-dynamic-require*/
+    importedModule = require(`${LAMBDA_TASK_ROOT}/${moduleToImport}`);
+  } catch (e) {
+    if (e.code === 'MODULE_NOT_FOUND') {
+      throw new Error(`Unable to import module '${moduleToImport}'`);
+    }
+
+    throw e;
+  }
+
+  const userHandler = importedModule[handlerToWrap];
+
+  if (typeof userHandler === 'undefined') {
+    throw new Error(
+      `Handler '${handlerToWrap}' missing on module '${moduleToImport}'`
+    );
+  }
+
+  if (typeof userHandler !== 'function') {
+    throw new Error(
+      `Handler '${handlerToWrap}' from '${moduleToImport}' is not a function`
+    );
+  }
+
+  return iopipe(userHandler);
 }
 
-module.exports.handler = function handler(...args) {
+module.exports.handler = function handler(event, context, callback) {
   if (!wrappedHandler) {
     wrappedHandler = wrapHandler();
   }
 
-  return wrappedHandler.apply(this, args);
+  return wrappedHandler.call(this, event, context, callback);
 };
