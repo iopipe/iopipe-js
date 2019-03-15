@@ -70,5 +70,5 @@ module.exports.handler = (event, context, callback) => {
     wrappedHandler = wrapHandler();
   }
 
-  return wrappedHandler.call(event, context, callback);
+  return wrappedHandler(event, context, callback);
 };
