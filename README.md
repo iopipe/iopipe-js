@@ -110,6 +110,16 @@ functions:
       - arn:aws:lambda:us-east-1:146318645305:layer:IOpipeNodeJS810:1
     runtime: nodejs8.10
 ```
+# Troubleshooting
+
+## Lambda layers: ```Lambda can't find the file @iopipe/iopipe.js```
+
+If you're seeing this error, it's likely that the node runtime isn't resolving ```NPM_PATH``` for the ```@iopipe/iopipe``` module in ```/opt/nodejs/node_modules```.
+
+These steps should fix the problem:  
+1. Create an ```iopipe_wrapper.js``` script in your project's root.
+2. The script's contents should be ```module.exports = require('@iopipe/iopipe');```. (And that's all that needs to be in it.)
+3. Update the handler for your layer declaration to ```iopipe_wrapper.handler```.
 
 # License
 
