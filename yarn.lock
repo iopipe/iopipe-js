@@ -78,16 +78,16 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@iopipe/config@^1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@iopipe/config/-/config-1.3.1.tgz#79732609753b6ebb5b1df8d7ae1280caf395161a"
+"@iopipe/config@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@iopipe/config/-/config-1.3.2.tgz#60e9ca1b4171eb70025cd546c0c873fac6894779"
   dependencies:
-    "@iopipe/event-info" "^1.3.0"
+    "@iopipe/event-info" "^1.3.1"
     "@iopipe/trace" "^1.3.0"
 
-"@iopipe/core@^1.17.1":
-  version "1.17.1"
-  resolved "https://registry.yarnpkg.com/@iopipe/core/-/core-1.17.1.tgz#0cb0ad168ec5e13e3c0f42484f0950f088b73faf"
+"@iopipe/core@^1.17.4":
+  version "1.17.4"
+  resolved "https://registry.yarnpkg.com/@iopipe/core/-/core-1.17.4.tgz#1f9d7977935a9426b5756fdcf22ec4b5dff4991b"
   dependencies:
     cosmiconfig "^4"
     lodash.uniqby "^4.7.0"
@@ -108,9 +108,9 @@
     eslint-plugin-react "^7.4.0"
     webpack "^3.7.1"
 
-"@iopipe/event-info@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@iopipe/event-info/-/event-info-1.3.0.tgz#46159224ee6d43ff2b6d3a0aec5f00940758cf72"
+"@iopipe/event-info@^1.3.1":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@iopipe/event-info/-/event-info-1.3.1.tgz#5a7407b3da73a558c7958b780c41d22d45790ae2"
   dependencies:
     flat "^4.0.0"
     lodash.get "^4.4.2"
