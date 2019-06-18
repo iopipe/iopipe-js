@@ -19,7 +19,7 @@ test('lib warns correctly for getContext methods', () => {
 });
 
 describe('iopipe kitchen sink', () => {
-  it('has trace and event info plugins pre-bundled', done => {
+  it('has trace, event info and profiler plugins pre-bundled', done => {
     let invocation;
     iopipe({
       clientId: 'foobar',
@@ -28,11 +28,12 @@ describe('iopipe kitchen sink', () => {
       try {
         const { config } = context.iopipe;
 
-        expect(invocation.plugins).toHaveLength(3);
+        expect(invocation.plugins).toHaveLength(4);
         expect(invocation.plugins.map(p => p.meta.name)).toEqual([
           'wow',
           '@iopipe/trace',
-          '@iopipe/event-info'
+          '@iopipe/event-info',
+          '@iopipe/profiler'
         ]);
 
         expect(_.isFunction(config.plugins[0])).toBe(true);
