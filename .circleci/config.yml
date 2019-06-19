@@ -67,6 +67,20 @@ jobs:
           name: Publish layers
           command: ./publish-layers.sh nodejs8.10
 
+  publish-njs10:
+    docker:
+      - image: circleci/node:10-stretch
+    working_directory: ~/circleci-deployment
+    steps:
+      - checkout
+      - run: sudo apt-get install -y python3-pip
+      - run:
+          name: Install publish dependencies
+          command: sudo pip3 install -U awscli
+      - run:
+          name: Publish layers
+          command: ./publish-layers.sh nodejs10.x
+
 workflows:
   version: 2
   all:
@@ -104,6 +118,15 @@ workflows:
             tags:
               only: /^v.*/
       - publish-njs810:
+          requires:
+            - install
+            - test
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
+      - publish-njs10:
           requires:
             - install
             - test
