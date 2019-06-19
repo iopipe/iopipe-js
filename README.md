@@ -1,4 +1,4 @@
-IOpipe Agent & Tracing Plugin
+IOpipe Agent & Bundled Plugins
 -----------------------------
 
 [![npm version](https://badge.fury.io/js/%40iopipe%2Fiopipe.svg)](https://badge.fury.io/js/%40iopipe%2Fiopipe)
