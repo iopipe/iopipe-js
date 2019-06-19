@@ -5,7 +5,7 @@ IOpipe Agent & Tracing Plugin
 [![Slack](https://img.shields.io/badge/chat-slack-ff69b4.svg)](https://iopipe.now.sh/)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-This package provides the IOpipe agent and the tracing plugin pre-bundled.
+This package provides the IOpipe agent and plugins pre-bundled.
 
 # Installation & usage
 
@@ -21,9 +21,9 @@ Or via yarn:
 yarn add @iopipe/iopipe
 ```
 
-Then require this module, passing it an object with your project token ([register for access](https://www.iopipe.com)), and it will automatically monitor and collect metrics from your applications running on AWS Lambda.
+Then require this module, passing it an object with your project token ([get a free account](https://www.iopipe.com)), and it will automatically monitor and collect metrics from your applications running on AWS Lambda.
 
-If you are using the Serverless Framework to deploy your lambdas, check out our [serverless plugin](https://github.com/iopipe/serverless-plugin-iopipe).
+If you are using the Serverless Framework to deploy your lambdas, check out our [serverless plugin](https://github.com/iopipe/serverless-iopipe-layers).
 
 Example:
 
@@ -35,9 +35,12 @@ exports.handler = iopipe((event, context) => {
 });
 ```
 
-By default this package will enable @iopipe/trace and @iopipe/event-info plugins. For more information on how to use IOpipe and these plugins, see the documentation below:
+By default this package will enable `@iopipe/trace` and `@iopipe/event-info` plugins. It also includes the `@iopipe/profiler` plugin, which is disabled by default. For more information on how to use IOpipe and these plugins, see the documentation below:
+
 - [IOpipe Documentation](https://github.com/iopipe/iopipe-js-core#readme)
 - [IOpipe Tracing Plugin Documentation](https://github.com/iopipe/iopipe-plugin-trace#readme)
+- [IOpipe Event Info Plugin Documentation](https://github.com/iopipe/iopipe-plugin-event-info#readme)
+- [IOpipe Profiler Plugin Documentation](https://github.com/iopipe/iopipe-plugin-profiler#readme)
 
 Example With Tracing, Custom Metrics, and Labels (ES6 Module Format):
 
@@ -65,6 +68,7 @@ exports.handler = iopipe()(async (event, context) => {
 
 IOpipe publishes [AWS Lambda Layers](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html) which are publicly available on AWS. Using a framework that supports lambda layers (such as SAM or Serverless), you can use the following ARNs for your runtime:
 
+* nodejs10.x: `arn:aws:lambda:$REGION:146318645305:layer:IOpipeNodeJS10:$VERSION_NUMBER`
 * nodejs8.10: `arn:aws:lambda:$REGION:146318645305:layer:IOpipeNodeJS810:$VERSION_NUMBER`
 * nodejs6.10: `arn:aws:lambda:$REGION:146318645305:layer:IOpipeNodeJS610:$VERSION_NUMBER`
 
