@@ -39,20 +39,6 @@ jobs:
       - run: cp .npmrc-ci .npmrc
       - run: yarn run release
 
-  publish-njs610:
-    docker:
-      - image: circleci/node:6-stretch
-    working_directory: ~/circleci-deployment
-    steps:
-      - checkout
-      - run: sudo apt-get install -y python3-pip
-      - run:
-          name: Install publish dependencies
-          command: sudo pip3 install -U awscli
-      - run:
-          name: Publish layers
-          command: ./publish-layers.sh nodejs6.10
-
   publish-njs810:
     docker:
       - image: circleci/node:8-stretch
@@ -108,15 +94,6 @@ workflows:
               only: master
             tags:
               ignore: /.*/
-      - publish-njs610:
-          requires:
-            - install
-            - test
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^v.*/
       - publish-njs810:
           requires:
             - install
