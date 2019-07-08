@@ -86,9 +86,18 @@
     "@iopipe/profiler" "^2.1.0"
     "@iopipe/trace" "^1.4.1"
 
-"@iopipe/core@^1.13", "@iopipe/core@^1.18.0":
+"@iopipe/core@^1.13":
   version "1.18.0"
   resolved "https://registry.yarnpkg.com/@iopipe/core/-/core-1.18.0.tgz#347faa77b3279fa691ef4db9c9bb123258f7f7d0"
+  dependencies:
+    cosmiconfig "^4"
+    lodash.uniqby "^4.7.0"
+    simple-get "^3.0.2"
+
+"@iopipe/core@^1.19.0":
+  version "1.19.0"
+  resolved "https://registry.yarnpkg.com/@iopipe/core/-/core-1.19.0.tgz#5c56b3df670f40bfb356b3fb995e0587f3715716"
+  integrity sha512-8+FRJIPbHpWmKAi9vHX4S+hmXLmBIFb1/af+vft/4YOZucH+DyYZuXLEx0H85x+mOqroimrO1ayEARBGxJ9WDg==
   dependencies:
     cosmiconfig "^4"
     lodash.uniqby "^4.7.0"
