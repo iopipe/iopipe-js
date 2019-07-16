@@ -78,21 +78,14 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@iopipe/config@^1.4.1":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@iopipe/config/-/config-1.4.1.tgz#0a80dd9fece853768401e646320620a2308a6987"
+"@iopipe/config@^1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@iopipe/config/-/config-1.4.2.tgz#791d7e3132b70e8d710fb2f1a383a99532671e7a"
+  integrity sha512-tfojIkxLTnW69GRIfKceuJpWRnMJ82u5649akg7lYwQi1jzYGZqy+RonOci+kPHWr5o0+LFTh9c0MJqW1f/Rcw==
   dependencies:
     "@iopipe/event-info" "^1.3.1"
-    "@iopipe/profiler" "^2.1.0"
+    "@iopipe/profiler" "^2.1.2"
     "@iopipe/trace" "^1.4.1"
-
-"@iopipe/core@^1.13":
-  version "1.18.0"
-  resolved "https://registry.yarnpkg.com/@iopipe/core/-/core-1.18.0.tgz#347faa77b3279fa691ef4db9c9bb123258f7f7d0"
-  dependencies:
-    cosmiconfig "^4"
-    lodash.uniqby "^4.7.0"
-    simple-get "^3.0.2"
 
 "@iopipe/core@^1.19.1":
   version "1.19.1"
@@ -125,18 +118,19 @@
     flat "^4.0.0"
     lodash.get "^4.4.2"
 
-"@iopipe/profiler@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@iopipe/profiler/-/profiler-2.1.0.tgz#54c556ca665d06abc2adcd9676b18e83d1c5e816"
+"@iopipe/profiler@^2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@iopipe/profiler/-/profiler-2.1.2.tgz#8d17a175450827caf110b410796c776a18bc1e18"
+  integrity sha512-crrdK1Ywftn4qn2Heq7Eq3i6THdZtF+5O3RAUqf+w4rk1xyDNvDMiINejBvPVEa/jLlbpU0kqnYK5JsExG2YHw==
   dependencies:
-    "@iopipe/core" "^1.13"
     archiver "^2.1.1"
     lodash.get "^4.4.2"
-    simple-get "^3.0.2"
+    simple-get "^3.0.3"
 
 "@iopipe/scripts@^1.4.1":
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/@iopipe/scripts/-/scripts-1.4.1.tgz#67c5012dfbc4d43875683786f450ebac9ed20117"
+  integrity sha512-sKuF5fV1N1icRgX0It9rSLICYAstCjBA4TcfzZdVNdEXpDKUbWvgiozrQgH1WMGgeudqs8dbEaEiBACaCRl+eQ==
   dependencies:
     "@iopipe/eslint-config-iopipe" "1.0.2"
     "@ljharb/eslint-config" "^12.2.1"
@@ -7033,7 +7027,7 @@ simple-concat@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/simple-concat/-/simple-concat-1.0.0.tgz#7344cbb8b6e26fb27d66b2fc86f9f6d5997521c6"
 
-simple-get@^3.0.2:
+simple-get@^3.0.2, simple-get@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/simple-get/-/simple-get-3.0.3.tgz#924528ac3f9d7718ce5e9ec1b1a69c0be4d62efa"
   dependencies:
