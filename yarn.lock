@@ -94,10 +94,10 @@
     lodash.uniqby "^4.7.0"
     simple-get "^3.0.2"
 
-"@iopipe/core@^1.19.0":
-  version "1.19.0"
-  resolved "https://registry.yarnpkg.com/@iopipe/core/-/core-1.19.0.tgz#5c56b3df670f40bfb356b3fb995e0587f3715716"
-  integrity sha512-8+FRJIPbHpWmKAi9vHX4S+hmXLmBIFb1/af+vft/4YOZucH+DyYZuXLEx0H85x+mOqroimrO1ayEARBGxJ9WDg==
+"@iopipe/core@^1.19.1":
+  version "1.19.1"
+  resolved "https://registry.yarnpkg.com/@iopipe/core/-/core-1.19.1.tgz#19da388f0c900f4551915c71993b4c1269979970"
+  integrity sha512-JyEcARVnE+TMYodEu9jV61CpWGqmBaAqfvUWX1m5ot1kzbXDS5gvnD/opYsNRteALluiLcb42TRxlEuPCTmijQ==
   dependencies:
     cosmiconfig "^4"
     lodash.uniqby "^4.7.0"

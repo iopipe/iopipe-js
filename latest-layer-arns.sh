@@ -37,12 +37,3 @@ for region in "${REGIONS[@]}"; do
     latest_arn=$(aws --region $region lambda list-layer-versions --layer-name IOpipeNodeJS810 --output text --query "LayerVersions[0].LayerVersionArn")
     echo "* ${region}: \`${latest_arn}\`"
 done
-
-echo ""
-echo "nodejs6.10:"
-echo ""
-
-for region in "${REGIONS[@]}"; do
-    latest_arn=$(aws --region $region lambda list-layer-versions --layer-name IOpipeNodeJS610 --output text --query "LayerVersions[0].LayerVersionArn")
-    echo "* ${region}: \`${latest_arn}\`"
-done

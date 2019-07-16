@@ -70,7 +70,6 @@ IOpipe publishes [AWS Lambda Layers](https://docs.aws.amazon.com/lambda/latest/d
 
 * nodejs10.x: `arn:aws:lambda:$REGION:146318645305:layer:IOpipeNodeJS10:$VERSION_NUMBER`
 * nodejs8.10: `arn:aws:lambda:$REGION:146318645305:layer:IOpipeNodeJS810:$VERSION_NUMBER`
-* nodejs6.10: `arn:aws:lambda:$REGION:146318645305:layer:IOpipeNodeJS610:$VERSION_NUMBER`
 
 Where `$REGION` is your AWS region and `$VERSION_NUMBER` is an integer representing the IOpipe release. You can get the version number via the [Releases](https://github.com/iopipe/iopipe-js/releases) page.
 

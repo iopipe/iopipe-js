@@ -35,11 +35,11 @@
   },
   "homepage": "https://github.com/iopipe/the-meta-package#readme",
   "engines": {
-    "node": ">=4.3.2"
+    "node": ">=8.10.0"
   },
   "dependencies": {
     "@iopipe/config": "^1.4.1",
-    "@iopipe/core": "^1.19.0"
+    "@iopipe/core": "^1.19.1"
   },
   "devDependencies": {
     "@iopipe/scripts": "^1.4.1",
