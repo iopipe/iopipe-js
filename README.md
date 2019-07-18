@@ -39,7 +39,7 @@ By default this package will enable `@iopipe/trace` and `@iopipe/event-info` plu
 
 - [IOpipe Documentation](https://github.com/iopipe/iopipe-js-core#readme)
 - [IOpipe Tracing Plugin Documentation](https://github.com/iopipe/iopipe-plugin-trace#readme)
-- [IOpipe Event Info Plugin Documentation](https://github.com/iopipe/iopipe-plugin-event-info#readme)
+- [IOpipe Event Info Plugin Documentation](https://github.com/iopipe/iopipe-js-event-info#readme)
 - [IOpipe Profiler Plugin Documentation](https://github.com/iopipe/iopipe-plugin-profiler#readme)
 
 Example With Tracing, Custom Metrics, and Labels (ES6 Module Format):
