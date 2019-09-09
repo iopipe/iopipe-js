@@ -78,14 +78,14 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@iopipe/config@^1.4.2":
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/@iopipe/config/-/config-1.4.2.tgz#791d7e3132b70e8d710fb2f1a383a99532671e7a"
-  integrity sha512-tfojIkxLTnW69GRIfKceuJpWRnMJ82u5649akg7lYwQi1jzYGZqy+RonOci+kPHWr5o0+LFTh9c0MJqW1f/Rcw==
+"@iopipe/config@^1.4.3":
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/@iopipe/config/-/config-1.4.3.tgz#d8d214389379e222c2d51d1cec296dbf2f03c14e"
+  integrity sha512-1OmIwsPhpy/m9CvByTcYU3TSXdpC3IEePShTVwkBya1z5PnTbmcZCMExtTK59m0YX8aw0n5WH/idqRGZ6DdkKw==
   dependencies:
-    "@iopipe/event-info" "^1.3.1"
+    "@iopipe/event-info" "^1.3.2"
     "@iopipe/profiler" "^2.1.2"
-    "@iopipe/trace" "^1.4.1"
+    "@iopipe/trace" "^1.5.3"
 
 "@iopipe/core@^1.19.1":
   version "1.19.1"
@@ -111,9 +111,10 @@
     eslint-plugin-react "^7.4.0"
     webpack "^3.7.1"
 
-"@iopipe/event-info@^1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@iopipe/event-info/-/event-info-1.3.1.tgz#5a7407b3da73a558c7958b780c41d22d45790ae2"
+"@iopipe/event-info@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@iopipe/event-info/-/event-info-1.3.2.tgz#7150a0029b7ae266b5f0da89c4b24209a5282b41"
+  integrity sha512-Rld4+CYI/27Kk9vbKTYrUKQoNlgSkBJyS9TQMoH8djHkQhVQJJo7uODbvfI5N009lPKFUUbQhAANKQYLB/KCpA==
   dependencies:
     flat "^4.0.0"
     lodash.get "^4.4.2"
@@ -190,16 +191,16 @@
     which "^1.3.0"
     yargs-parser "^8.0.0"
 
-"@iopipe/trace@^1.4.1":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@iopipe/trace/-/trace-1.4.1.tgz#dd773b0bf33e563940e13b37d1b6b818e331f001"
+"@iopipe/trace@^1.5.3":
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/@iopipe/trace/-/trace-1.5.3.tgz#eba76f485cf42774b9b648928282e8b53d142b63"
+  integrity sha512-CkFw7wbRWtbxnbASnScBe7QW+Ng5kok+RAxMH88LnazwyBlsYMlLU4BjVLIMVqmDlRu6idjOBaueJaLkeSYIxw==
   dependencies:
     flat "^4.0.0"
-    ioredis "^4.9.0"
     isarray "^2.0.4"
     lodash.pickby "^4.6.0"
-    performance-node "^0.2.0"
-    semver "^6.0.0"
+    performance-node "^0"
+    semver "^6.3.0"
     shimmer "^1.2.1"
     uuid "^3.2.1"
 
@@ -1944,10 +1945,6 @@ clone@~0.1.9:
   version "0.1.19"
   resolved "https://registry.yarnpkg.com/clone/-/clone-0.1.19.tgz#613fb68639b26a494ac53253e15b1a6bd88ada85"
 
-cluster-key-slot@^1.0.6:
-  version "1.0.12"
-  resolved "https://registry.yarnpkg.com/cluster-key-slot/-/cluster-key-slot-1.0.12.tgz#d5deff2a520717bc98313979b687309b2d368e29"
-
 co@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
@@ -2463,10 +2460,6 @@ delayed-stream@~1.0.0:
 delegates@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
-
-denque@^1.1.0:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/denque/-/denque-1.4.1.tgz#6744ff7641c148c3f8a69c307e51235c1f4a37cf"
 
 des.js@^1.0.0:
   version "1.0.0"
@@ -4073,20 +4066,6 @@ invert-kv@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6"
 
-ioredis@^4.9.0:
-  version "4.10.0"
-  resolved "https://registry.yarnpkg.com/ioredis/-/ioredis-4.10.0.tgz#a212127473d1618af3714bd6c09fb7dcab594250"
-  dependencies:
-    cluster-key-slot "^1.0.6"
-    debug "^3.1.0"
-    denque "^1.1.0"
-    lodash.defaults "^4.2.0"
-    lodash.flatten "^4.4.0"
-    redis-commands "1.5.0"
-    redis-errors "^1.2.0"
-    redis-parser "^3.0.0"
-    standard-as-callback "^2.0.1"
-
 is-absolute@^0.2.3:
   version "0.2.6"
   resolved "https://registry.yarnpkg.com/is-absolute/-/is-absolute-0.2.6.tgz#20de69f3db942ef2d87b9c2da36f172235b1b5eb"
@@ -5191,14 +5170,6 @@ lodash.camelcase@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
 
-lodash.defaults@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
-
-lodash.flatten@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/lodash.flatten/-/lodash.flatten-4.4.0.tgz#f31c22225a9632d2bbf8e4addbef240aa765a61f"
-
 lodash.get@^3.7.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-3.7.0.tgz#3ce68ae2c91683b281cc5394128303cbf75e691f"
@@ -6132,9 +6103,10 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-performance-node@^0.2.0:
+performance-node@^0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/performance-node/-/performance-node-0.2.0.tgz#03abf74ac0c455f333be505165dacab9110ef5b3"
+  integrity sha1-A6v3SsDEVfMzvlBRZdrKuREO9bM=
 
 performance-now@^0.2.0:
   version "0.2.0"
@@ -6475,20 +6447,6 @@ redeyed@~1.0.0:
   resolved "https://registry.yarnpkg.com/redeyed/-/redeyed-1.0.1.tgz#e96c193b40c0816b00aec842698e61185e55498a"
   dependencies:
     esprima "~3.0.0"
-
-redis-commands@1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/redis-commands/-/redis-commands-1.5.0.tgz#80d2e20698fe688f227127ff9e5164a7dd17e785"
-
-redis-errors@^1.0.0, redis-errors@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/redis-errors/-/redis-errors-1.2.0.tgz#eb62d2adb15e4eaf4610c04afe1529384250abad"
-
-redis-parser@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/redis-parser/-/redis-parser-3.0.0.tgz#b66d828cdcafe6b4b8a428a7def4c6bcac31c8b4"
-  dependencies:
-    redis-errors "^1.0.0"
 
 regenerate@^1.2.1:
   version "1.3.3"
@@ -6948,9 +6906,10 @@ semver-diff@^2.0.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
 
-semver@^6.0.0:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-6.1.1.tgz#53f53da9b30b2103cd4f15eab3a18ecbcb210c9b"
+semver@^6.3.0:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.0.tgz#ee0a64c8af5e8ceea67687b133761e1becbd1d3d"
+  integrity sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==
 
 semver@~2.3.1:
   version "2.3.2"
@@ -7216,10 +7175,6 @@ ssri@^5.2.4:
 staged-git-files@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/staged-git-files/-/staged-git-files-0.0.4.tgz#d797e1b551ca7a639dec0237dc6eb4bb9be17d35"
-
-standard-as-callback@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/standard-as-callback/-/standard-as-callback-2.0.1.tgz#ed8bb25648e15831759b6023bdb87e6b60b38126"
 
 static-extend@^0.1.1:
   version "0.1.2"
