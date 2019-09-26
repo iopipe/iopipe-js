@@ -78,14 +78,14 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@iopipe/config@^1.4.3":
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/@iopipe/config/-/config-1.4.3.tgz#d8d214389379e222c2d51d1cec296dbf2f03c14e"
-  integrity sha512-1OmIwsPhpy/m9CvByTcYU3TSXdpC3IEePShTVwkBya1z5PnTbmcZCMExtTK59m0YX8aw0n5WH/idqRGZ6DdkKw==
+"@iopipe/config@^1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@iopipe/config/-/config-1.4.4.tgz#dd20ef7a0365d18a46868f61a879a76078d501be"
+  integrity sha512-l2dvADrEPt7cLw+dAM6khvzEkIUFdc58jiLL0BBelVj0FYN6u2P5p6N9dI+O/DFIYwoOFrn5R3h2IjIy2FF2gQ==
   dependencies:
     "@iopipe/event-info" "^1.3.2"
     "@iopipe/profiler" "^2.1.2"
-    "@iopipe/trace" "^1.5.3"
+    "@iopipe/trace" "^1.6.0"
 
 "@iopipe/core@^1.19.1":
   version "1.19.1"
@@ -191,10 +191,10 @@
     which "^1.3.0"
     yargs-parser "^8.0.0"
 
-"@iopipe/trace@^1.5.3":
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/@iopipe/trace/-/trace-1.5.3.tgz#eba76f485cf42774b9b648928282e8b53d142b63"
-  integrity sha512-CkFw7wbRWtbxnbASnScBe7QW+Ng5kok+RAxMH88LnazwyBlsYMlLU4BjVLIMVqmDlRu6idjOBaueJaLkeSYIxw==
+"@iopipe/trace@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@iopipe/trace/-/trace-1.6.0.tgz#69ecbd94b84397481107fa23d2d5ea3ad5bf7b11"
+  integrity sha512-nprhHCV7uwOHo3pL9jpRkM02jCRUEAoJr1qCmCaGyRkJdOQxqDB51K1p/Q//xJrEmOexM9u4EZprUMdqzXrDkg==
   dependencies:
     flat "^4.0.0"
     isarray "^2.0.4"
