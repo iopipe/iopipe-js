@@ -38,7 +38,7 @@
     "node": ">=8.10.0"
   },
   "dependencies": {
-    "@iopipe/config": "^1.4.4",
+    "@iopipe/config": "^1.4.5",
     "@iopipe/core": "^1.19.1"
   },
   "devDependencies": {
