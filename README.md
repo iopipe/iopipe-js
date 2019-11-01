@@ -1,3 +1,6 @@
+**✨Special Announcement: We've Joined New Relic Serverless!**
+**Get ready to function faster with full visibility into your serverless applications—and everything else. [Read our founders' note to learn more.](https://read.iopipe.com/founders-note-iopipe-new-relic-acquisition-c15eeda47151)**
+
 IOpipe Agent & Bundled Plugins
 -----------------------------
 
